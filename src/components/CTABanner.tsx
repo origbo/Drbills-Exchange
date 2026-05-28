@@ -1,7 +1,7 @@
 import { ArrowRight, Apple, Sparkles } from "lucide-react";
 import { SiGoogleplay } from "react-icons/si";
-import { motion } from "framer-motion";
 import Reveal from "./Reveal";
+import AppMockup from "./AppMockup";
 
 export default function CTABanner() {
   return (
@@ -75,36 +75,8 @@ export default function CTABanner() {
                 </div>
               </div>
 
-              {/* Real DrBills app preview */}
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                className="relative mx-auto w-full max-w-md"
-              >
-                {/* Halo glow behind */}
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70 blur-3xl"
-                  style={{
-                    background:
-                      "radial-gradient(closest-side, rgba(124,58,237,0.5), rgba(6,182,212,0.25) 55%, transparent 75%)",
-                  }}
-                />
-                <motion.img
-                  src="/app-preview.png"
-                  alt="DrBills Exchange app showing crypto assets and bills"
-                  draggable={false}
-                  className="relative mx-auto block h-auto w-full select-none drop-shadow-[0_40px_60px_rgba(0,0,0,0.55)]"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-              </motion.div>
+              {/* iPhone mockup with live DrBills UI */}
+              <AppMockup />
             </div>
           </div>
         </Reveal>
